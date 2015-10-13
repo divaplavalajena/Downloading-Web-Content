@@ -13,6 +13,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = NSURL(string: "http://www.stackoverflow.com")!
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+            
+            //Will happen when task completes
+            //Known as a completion handler or a closure
+            
+            if let urlContent = data {
+                
+                print(urlContent)
+                
+            } else {
+                //Show error message
+            }
+            
+        }
+        
+        task.resume()
+        
     }
 
     override func didReceiveMemoryWarning() {

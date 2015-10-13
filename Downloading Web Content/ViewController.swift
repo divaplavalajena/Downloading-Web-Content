@@ -23,7 +23,9 @@ class ViewController: UIViewController {
             
             if let urlContent = data {
                 
-                print(urlContent)
+                let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
+                
+                print(webContent)
                 
             } else {
                 //Show error message

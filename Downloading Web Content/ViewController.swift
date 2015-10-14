@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         
         let url = NSURL(string: "http://www.stackoverflow.com")!
         
+        webView.loadRequest(NSURLRequest(URL: url))
+        
+        /*
+        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
             
             //Will happen when task completes
@@ -30,7 +34,7 @@ class ViewController: UIViewController {
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     
-                    self.webView.loadHTMLString(String(webContent), baseURL: nil)
+                    self.webView.loadHTMLString(String(webContent!), baseURL: nil)
                 })
                 
                 
@@ -42,6 +46,7 @@ class ViewController: UIViewController {
         }
         
         task.resume()
+*/
         
     }
 
